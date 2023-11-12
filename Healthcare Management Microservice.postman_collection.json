@@ -1,0 +1,2151 @@
+{
+	"info": {
+		"_postman_id": "c2cbf070-cd4b-4127-9342-d78dbb7371e4",
+		"name": "Healthcare Management Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31101992"
+	},
+	"item": [
+		{
+			"name": "Doctor Management",
+			"item": [
+				{
+					"name": "Create Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"saju\",\r\n    \"email\": \"saju@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Urology\",\r\n    \"registration_number_BDMC\" : \"2018-2-50-509\",\r\n    \"allocated_room\" : \"608\",\r\n    \"qualifications\" : [\r\n       \"MD\", \"MBBS\", \"MPHIL\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/doctor/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully user create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"khalid \",\r\n    \"email\": \"kahlid@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-110\",\r\n    \"allocated_room\" : \"502\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\", \"BPT\", \"MD\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:23:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"moin \",\n    \"email\": \"moin@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"male\",\n    \"registration_number_BDMC\": \"2018-2-60-110\",\n    \"allocated_room\": \"502\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\"\n    ],\n    \"created_at\": \"2023-11-11\"\n}"
+						},
+						{
+							"name": "Bad Request to create doctor with same email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"moin \",\r\n    \"email\": \"moin@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-110\",\r\n    \"allocated_room\" : \"502\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:50:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\",\n    \"success\": false,\n    \"status\": \"BAD_REQUEST\"\n}"
+						},
+						{
+							"name": "Doctor profile 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ikra \",\r\n    \"email\": \"ikra@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"female\",\r\n    \"department\" : \"Pathology\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-599\",\r\n    \"allocated_room\" : \"511\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\", \"DCM\", \"BSURG\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Nov 2023 21:37:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"ikra \",\n    \"email\": \"ikra@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"female\",\n    \"registration_number_BDMC\": \"2018-2-60-599\",\n    \"allocated_room\": \"511\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\",\n        \"DCM\",\n        \"BSURG\"\n    ],\n    \"created_at\": \"2023-11-12\"\n}"
+						},
+						{
+							"name": "Doctor profile 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"nuha \",\r\n    \"email\": \"nuha@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"female\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-599\",\r\n    \"allocated_room\" : \"511\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"DCM\", \"BSURG\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Nov 2023 21:38:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Biru\",\n    \"email\": \"biru@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"female\",\n    \"registration_number_BDMC\": \"2018-2-60-599\",\n    \"allocated_room\": \"611\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"DCM\",\n        \"BSURG\"\n    ],\n    \"created_at\": \"2023-11-12\"\n}"
+						},
+						{
+							"name": "Doctor Profile 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"rezu\",\r\n    \"email\": \"rezu@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Urology\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-509\",\r\n    \"allocated_room\" : \"602\",\r\n    \"qualifications\" : [\r\n       \"MD\", \"MBBS\", \"DCM\", \"BSURG\", \"MPHIL\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Nov 2023 21:46:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"rezu\",\n    \"email\": \"rezu@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"male\",\n    \"registration_number_BDMC\": \"2018-2-60-509\",\n    \"allocated_room\": \"602\",\n    \"qualifications\": [\n        \"MD\",\n        \"MBBS\",\n        \"DCM\",\n        \"BSURG\",\n        \"MPHIL\"\n    ],\n    \"isAvailable\": false,\n    \"isValid\": false,\n    \"created_at\": \"2023-11-12\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyOTEyM30.zekHHwnCCfBjq18XS_O0G0WGeJdc92YpWVLVDEY-3YE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/verify-doctor/6a5bb2ca-dd05-4533-9e63-22ec329e4b46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"verify-doctor",
+								"6a5bb2ca-dd05-4533-9e63-22ec329e4b46"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully user create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"moin \",\r\n    \"email\": \"moin@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-110\",\r\n    \"allocated_room\" : \"502\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:23:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"moin \",\n    \"email\": \"moin@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"male\",\n    \"registration_number_BDMC\": \"2018-2-60-110\",\n    \"allocated_room\": \"502\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\"\n    ],\n    \"created_at\": \"2023-11-11\"\n}"
+						},
+						{
+							"name": "Bad Request to create doctor with same email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"moin \",\r\n    \"email\": \"moin@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-110\",\r\n    \"allocated_room\" : \"502\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:50:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\",\n    \"success\": false,\n    \"status\": \"BAD_REQUEST\"\n}"
+						},
+						{
+							"name": "Already Verified Conflict Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/verifydoctor/2cea7aa5-cf21-4fb2-8553-1002e8a2d4b9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"verifydoctor",
+										"2cea7aa5-cf21-4fb2-8553-1002e8a2d4b9"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 06:39:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "The Doctor is Already Verified"
+						}
+					]
+				},
+				{
+					"name": "Disable doctor profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyMjMxOX0.SFA_ZUQoh0ahyN7F_MIVI1Y5OQ5Tn5-dt-rrtx3kcBk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/disable-doctor/817038fc-96d6-4e98-85cd-504456900653",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"disable-doctor",
+								"817038fc-96d6-4e98-85cd-504456900653"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful disable request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyMjMxOX0.SFA_ZUQoh0ahyN7F_MIVI1Y5OQ5Tn5-dt-rrtx3kcBk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/disable-doctor/2e9dfdf0-1603-4c74-bfc4-e3504f522938",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"disable-doctor",
+										"2e9dfdf0-1603-4c74-bfc4-e3504f522938"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Nov 2023 19:44:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "Change Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyMjMxOX0.SFA_ZUQoh0ahyN7F_MIVI1Y5OQ5Tn5-dt-rrtx3kcBk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/change-availability-status/1152b91c-9db6-4a9d-afaa-b15682aceaa9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"change-availability-status",
+								"1152b91c-9db6-4a9d-afaa-b15682aceaa9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful disable request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyMjMxOX0.SFA_ZUQoh0ahyN7F_MIVI1Y5OQ5Tn5-dt-rrtx3kcBk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/disable-doctor/2e9dfdf0-1603-4c74-bfc4-e3504f522938",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"disable-doctor",
+										"2e9dfdf0-1603-4c74-bfc4-e3504f522938"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Nov 2023 19:44:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyMTYzMH0.dUG1x-tNUusZ-Rf398Tvq3y3q6ogRM3UEc8qyRdVaDA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saju@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Doctor Login Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zilani@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:43:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg\",\n    \"Message\": \"Successfully logged in\"\n}"
+						},
+						{
+							"name": "Unauthorized login by wrong credential",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"khalidhas@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:53:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Authentication failed: No value present\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Doctor Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDI5OTIzNX0.gB3IBCgdCmioTwiutBzXNQzQKiiihV4mN2U_qj92bcA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"rezu hasan\",\r\n    \"email\": \"rezu@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Urology\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-509\",\r\n    \"allocated_room\" : \"602\",\r\n    \"qualifications\" : [\r\n        \"MSC\", \"PHD\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/doctor/updatedoctorprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"updatedoctorprofile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Update Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDI5OTIzNX0.gB3IBCgdCmioTwiutBzXNQzQKiiihV4mN2U_qj92bcA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Zilani Hasan\",\r\n    \"gender\": \"Male\",\r\n    \"department\": \"Phycology\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-116\",\r\n    \"qualifications\": [\"M.Phil\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/updatedoctorprofile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"updatedoctorprofile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 09:24:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"doctor_id\": \"10c2d4db-0a1a-4040-b7af-29424742c197\",\n    \"email\": \"zilani@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"name\": \"Zilani Hasan\",\n    \"gender\": \"Male\",\n    \"department\": \"Phycology\",\n    \"registration_number_BDMC\": \"2018-2-60-116\",\n    \"allocated_room\": \"503\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\",\n        \"B.Med\",\n        \"BAMS\",\n        \"BCS\",\n        \"BBA\",\n        \"M.Phil\",\n        \"M.Phil\",\n        \"M.Phil\"\n    ]\n}"
+						},
+						{
+							"name": "Update Doctor Profile example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDI5OTIzNX0.gB3IBCgdCmioTwiutBzXNQzQKiiihV4mN2U_qj92bcA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"rezu hasan\",\r\n    \"email\": \"rezu@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Urology\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-509\",\r\n    \"allocated_room\" : \"602\",\r\n    \"qualifications\" : [\r\n        \"MSC\", \"PHD\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/updatedoctorprofile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"updatedoctorprofile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 Nov 2023 21:48:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"doctor_id\": \"817038fc-96d6-4e98-85cd-504456900653\",\n    \"email\": \"zilani@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"name\": \"rezu hasan\",\n    \"gender\": \"male\",\n    \"department\": \"Urology\",\n    \"registration_number_BDMC\": \"2018-2-60-509\",\n    \"allocated_room\": \"503\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\",\n        \"B.Med\",\n        \"BAMS\",\n        \"MSC\",\n        \"PHD\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get doctor by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/get-doctor-by-email/biru@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"get-doctor-by-email",
+								"biru@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Get By Id Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/getbyid/2cea7aa5-cf21-4fb2-8553-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"getbyid",
+										"2cea7aa5-cf21-4fb2-8553-1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:48:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"doctor_id\": \"2cea7aa5-cf21-4fb2-8553-1002e8a2d4b9\",\n    \"email\": \"moin@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"name\": \"moin \",\n    \"gender\": \"male\",\n    \"department\": \"Medicine\",\n    \"registration_number_BDMC\": \"2018-2-60-110\",\n    \"allocated_room\": \"502\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\"\n    ]\n}"
+						},
+						{
+							"name": "Unsuccessful Get Request for Wrong doctor_id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/getbyid/2cea7aa5-cf21-4fb2-8553-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"getbyid",
+										"2cea7aa5-cf21-4fb2-8553-1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:59:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User profile not found by id\",\n    \"success\": true,\n    \"status\": \"NOT_FOUND\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get doctor by email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/getdoctorbyemail/khalidhasan@gmail.co",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"getdoctorbyemail",
+								"khalidhasan@gmail.co"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Get By Email Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/getdoctorbyemail/khalidhasan@mal.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"getdoctorbyemail",
+										"khalidhasan@mal.com"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Disposition",
+									"value": "inline;filename=f.txt"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 06:06:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"c8e8a319-677c-479a-82c7-3bc4de1dabe0\",\n    \"email\": \"khalidhasan@gmail.com\",\n    \"name\": \"khalid \",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"male\",\n    \"department\": \"Surgery\",\n    \"registration_number_BDMC\": \"2018-2-60-110\",\n    \"allocated_room\": \"501\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\",\n        \"MBChB\"\n    ],\n    \"created_at\": null\n}"
+						},
+						{
+							"name": "Unsuccessful Get By Email Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/getdoctorbyemail/khalidhasan@gmail.co",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"getdoctorbyemail",
+										"khalidhasan@gmail.co"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Disposition",
+									"value": "inline;filename=f.txt"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 06:27:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "No Doctor is found by this email"
+						}
+					]
+				},
+				{
+					"name": "get all available doctor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWp1QGdtYWlsLmNvbSIsInJvbGVzIjpbIkRPQ1RPUiJdLCJleHAiOjE3MDA0MzgxMzh9.JKXixKARV1-7fIYZJynwZbZgVip-L1VyJtDd2Rzha0k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/get-all-available-doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"get-all-available-doctor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get doctor by id Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWp1QGdtYWlsLmNvbSIsInJvbGVzIjpbIkRPQ1RPUiJdLCJleHAiOjE3MDA0MzgxMzh9.JKXixKARV1-7fIYZJynwZbZgVip-L1VyJtDd2Rzha0k",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/get-all-available-doctor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"get-all-available-doctor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Nov 2023 00:31:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"doctor_id\": \"1152b91c-9db6-4a9d-afaa-b15682aceaa9\",\n        \"email\": \"bushra@gmail.com\",\n        \"name\": \"Bushra \",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"female\",\n        \"department\": \"Pathology\",\n        \"registration_number_BDMC\": \"2018-2-60-2599\",\n        \"allocated_room\": \"507\",\n        \"qualifications\": [\n            \"MBBS\",\n            \"BMBS\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    },\n    {\n        \"doctor_id\": \"1ca5b9a5-3bd6-4155-ba9c-25dee486e9e1\",\n        \"email\": \"ikra@gmail.com\",\n        \"name\": \"ikra \",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"female\",\n        \"department\": \"Pathology\",\n        \"registration_number_BDMC\": \"2018-2-60-599\",\n        \"allocated_room\": \"511\",\n        \"qualifications\": [\n            \"MBBS\",\n            \"BMBS\",\n            \"DCM\",\n            \"BSURG\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    },\n    {\n        \"doctor_id\": \"6a5bb2ca-dd05-4533-9e63-22ec329e4b46\",\n        \"email\": \"Iram@gmail.com\",\n        \"name\": \"iram \",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"male\",\n        \"department\": \"Pathology\",\n        \"registration_number_BDMC\": \"2018-2-60-256\",\n        \"allocated_room\": \"504\",\n        \"qualifications\": [\n            \"MBBS\",\n            \"BMBS\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    },\n    {\n        \"doctor_id\": \"6ffec641-ccbb-411c-9b37-d76315766378\",\n        \"email\": \"rezu@gmail.com\",\n        \"name\": \"rezu\",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"male\",\n        \"department\": \"Urology\",\n        \"registration_number_BDMC\": \"2018-2-60-509\",\n        \"allocated_room\": \"602\",\n        \"qualifications\": [\n            \"MD\",\n            \"MBBS\",\n            \"DCM\",\n            \"BSURG\",\n            \"MPHIL\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get all doctor by department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWp1QGdtYWlsLmNvbSIsInJvbGVzIjpbIkRPQ1RPUiJdLCJleHAiOjE3MDA0MzgxMzh9.JKXixKARV1-7fIYZJynwZbZgVip-L1VyJtDd2Rzha0k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8082/doctor/get-all-doctor-by-department/Pathology",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"get-all-doctor-by-department",
+								"Pathology"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get doctor by id Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWp1QGdtYWlsLmNvbSIsInJvbGVzIjpbIkRPQ1RPUiJdLCJleHAiOjE3MDA0MzgxMzh9.JKXixKARV1-7fIYZJynwZbZgVip-L1VyJtDd2Rzha0k",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/get-all-available-doctor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"get-all-available-doctor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Nov 2023 00:31:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"doctor_id\": \"1152b91c-9db6-4a9d-afaa-b15682aceaa9\",\n        \"email\": \"bushra@gmail.com\",\n        \"name\": \"Bushra \",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"female\",\n        \"department\": \"Pathology\",\n        \"registration_number_BDMC\": \"2018-2-60-2599\",\n        \"allocated_room\": \"507\",\n        \"qualifications\": [\n            \"MBBS\",\n            \"BMBS\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    },\n    {\n        \"doctor_id\": \"1ca5b9a5-3bd6-4155-ba9c-25dee486e9e1\",\n        \"email\": \"ikra@gmail.com\",\n        \"name\": \"ikra \",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"female\",\n        \"department\": \"Pathology\",\n        \"registration_number_BDMC\": \"2018-2-60-599\",\n        \"allocated_room\": \"511\",\n        \"qualifications\": [\n            \"MBBS\",\n            \"BMBS\",\n            \"DCM\",\n            \"BSURG\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    },\n    {\n        \"doctor_id\": \"6a5bb2ca-dd05-4533-9e63-22ec329e4b46\",\n        \"email\": \"Iram@gmail.com\",\n        \"name\": \"iram \",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"male\",\n        \"department\": \"Pathology\",\n        \"registration_number_BDMC\": \"2018-2-60-256\",\n        \"allocated_room\": \"504\",\n        \"qualifications\": [\n            \"MBBS\",\n            \"BMBS\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    },\n    {\n        \"doctor_id\": \"6ffec641-ccbb-411c-9b37-d76315766378\",\n        \"email\": \"rezu@gmail.com\",\n        \"name\": \"rezu\",\n        \"role\": \"DOCTOR\",\n        \"gender\": \"male\",\n        \"department\": \"Urology\",\n        \"registration_number_BDMC\": \"2018-2-60-509\",\n        \"allocated_room\": \"602\",\n        \"qualifications\": [\n            \"MD\",\n            \"MBBS\",\n            \"DCM\",\n            \"BSURG\",\n            \"MPHIL\"\n        ],\n        \"isAvailable\": true,\n        \"isValid\": true,\n        \"created_at\": \"2023-11-12\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Doctor Appointment Slot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aWxhbmlAZ21haWwuY29tIiwicm9sZXMiOlsiRE9DVE9SIl0sImV4cCI6MTcwMDQyOTEyM30.zekHHwnCCfBjq18XS_O0G0WGeJdc92YpWVLVDEY-3YE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startTime\": \"2023-11-15T10:20:00\",\r\n  \"duration\": 120  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/doctor/create-appointment-slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"doctor",
+								"create-appointment-slots"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully user create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"moin \",\r\n    \"email\": \"moin@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-110\",\r\n    \"allocated_room\" : \"502\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:23:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"moin \",\n    \"email\": \"moin@gmail.com\",\n    \"role\": \"DOCTOR\",\n    \"gender\": \"male\",\n    \"registration_number_BDMC\": \"2018-2-60-110\",\n    \"allocated_room\": \"502\",\n    \"qualifications\": [\n        \"MBBS\",\n        \"BMBS\"\n    ],\n    \"created_at\": \"2023-11-11\"\n}"
+						},
+						{
+							"name": "Bad Request to create doctor with same email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"moin \",\r\n    \"email\": \"moin@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"gender\": \"male\",\r\n    \"department\" : \"Medicine\",\r\n    \"registration_number_BDMC\" : \"2018-2-60-110\",\r\n    \"allocated_room\" : \"502\",\r\n    \"qualifications\" : [\r\n        \"MBBS\", \"BMBS\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/doctor/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 05:50:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\",\n    \"success\": false,\n    \"status\": \"BAD_REQUEST\"\n}"
+						},
+						{
+							"name": "Already Verified Conflict Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraGFsaWRoYXNhbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJET0NUT1IiXSwiZXhwIjoxNzAwMjg2MjEzfQ.7ZGt15DHb4OCToebB1KvmvIWvC5lRStPnWba2HHT8lg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8082/doctor/verifydoctor/2cea7aa5-cf21-4fb2-8553-1002e8a2d4b9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"doctor",
+										"verifydoctor",
+										"2cea7aa5-cf21-4fb2-8553-1002e8a2d4b9"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 06:39:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "The Doctor is Already Verified"
+						}
+					]
+				}
+			]
+		}
+	]
+}
